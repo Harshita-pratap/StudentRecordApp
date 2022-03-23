@@ -1,0 +1,90 @@
+<div class="row">
+    
+    <div class="col-sm-6">
+        <app-student-list #studentlist></app-student-list>
+        </div>
+    <div class="col-sm-6">
+<div class="container">
+
+    <form  #addForm = "ngForm">
+      <div class="mt-5">
+        <div class="form-row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label > Name </label>
+            </div>
+            <div class="form-row">
+                <div class="col">
+                  <input type="text" name ="name" id="name" class="form-control" placeholder="name" ngModel required > 
+                </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label > College </label>
+            </div>
+            <div class="form-row">
+                <div class="col">
+                  <input type="text" id ="college" name="college"  class="form-control" placeholder="college" ngModel>
+                </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label > Degree </label>
+            </div>
+            
+            <div class="form-row">
+                <div class="col">
+                    <div class ="custom-select">
+                        <select id ="degree" name="degree" 
+                        class="form-control" ngModel
+                         required>
+                        
+                       
+                        <option value = "BTECH">B-TECH</option>
+                        <option value = "BSC">BSc</option>
+                        <option value = "BCA">BCA</option>
+                        <option value = "MCA">MCA</option>
+                        <option value = "MTECH">M-TECH</option>
+                       
+          
+                        </select>
+                       
+                    </div>
+                </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label > Specialization </label>
+            </div>
+            <div class="form-row">
+                <div class="col">
+                  <input type="text" name="specialization"  id = "specialization" class="form-control" placeholder="Specialization" ngModel>
+                </div>
+            </div>
+          </div>
+          <br>
+          <div class="form-row mt-4">
+            
+              <button type="button" class="btn btn-primary"  [disabled]="!addForm.valid" (click)="onAddStudent(addForm)">Save</button>
+             &nbsp;
+              
+              <button type ="button" class="btn btn-primary" (click)="studentlist.getStudents()">Show</button>
+              
+              &nbsp;   &nbsp;
+              
+              <button type="button" class="btn btn-primary" (click)="resetForm(addForm)">Cancel</button>
+              
+            
+          </div>
+        </div>
+      </div>
+    </form>
+</div>
+    
+</div>
+
+</div>
+
